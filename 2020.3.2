@@ -1,0 +1,17 @@
+tomcat的8080端口被‘4’进程占用
+查看端口是否被占用（以8080端口为例）
+cmd输入
+netstat -aon|findstr "8080"
+执行上述命令后，会显示协议、本地地址、外部地址、状态、PID，然后我们可以找到8080端口对应的PID，
+打开Windows 任务管理器，找到 PID ，看对应的是哪个程序，
+解除端口占用，只需要选择这个进程的程序，点击结束进程即可，
+如果system进程(pid=4)占用80端口，
+上述方法并不能关闭8080端口，
+新建CMD输入net stop http
+输入Y
+输入Sc config http start= disabled
+原来为4的进程转而占用445端口
+然后CMD输入sc config http start=demand & net start http
+输入Sc config http start= auto
+恢复http服务
+
