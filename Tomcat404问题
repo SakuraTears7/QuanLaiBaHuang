@@ -1,0 +1,15 @@
+配置Tomcat/SpringMVC后
+运行项目提示：
+HTTP Status 404 – 未找到
+Type Status Report
+
+消息 /houseSale//houseSaleController/houseSaleList
+
+描述 源服务器未能找到目标资源的表示或者是不愿公开一个已经存在的资源表示。
+
+解决办法：
+
+遇到问题之一：导出的.war 包，被放进tomcat配置的，服务定义的路径里了
+
+解决办法：直接删除原来war包，问题解决
+
